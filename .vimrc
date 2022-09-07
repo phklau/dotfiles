@@ -23,9 +23,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
  Plugin 'joshdick/onedark.vim'
  Plugin 'VundleVim/Vundle.vim'
- Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
  Plugin 'tpope/vim-surround'
- Plugin 'puremourning/vimspector' "Debug
 call vundle#end()
 filetype plugin indent on
 
