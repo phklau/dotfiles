@@ -4,19 +4,23 @@ set-option -g status-position bottom
 run-shell 'powerline-config tmux setup'
 #set shell
 set -g default-shell /bin/zsh
-set -s default-terminal 'tmux-256color'
+set -s default-terminal 'screen-256color'
 #remap prefix
-set -g prefix C-y
-unbind C-y
-bind C-y send-prefix
+set -g prefix C-x
+unbind C-x
+  bind C-x send-prefix
 
 #Mouse for Scrolling
 set -g mouse on
 bind -n WheelUpPane copy-mode
 #Vi Copymode space zum markieren enter zum kopieren
 setw -g mode-keys vi
-bind P paste-buffer
-#force reload of config file
+#Vim like copy ... not needed
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
+#copy to clipboard
+set-option -s set-clipboard off
+bind C-c send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary | xclip -i -selection clipboard"
 unbind r
 bin r source-file ~/.tmux.conf
 
