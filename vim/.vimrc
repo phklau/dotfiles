@@ -8,12 +8,11 @@ set gfn=Monospace\ 10
 set expandtab
 " indetLine(Linien die Einrückungen markieren)
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-colorscheme atom-dark-256
 set background=dark
 set term=xterm-256color
 " Airline --> statusbar
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'luna'
+let g:airline_theme = 'onedark'
 let g:airline#extensions#branch#enabled = 1
 " MarkdownPreview
 " " set to 1, nvim will open the preview window after entering the markdown buffer
@@ -122,5 +121,8 @@ call plug#begin()
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'Yggdroot/indentLine'
 	Plug 'sheerun/vim-polyglot'
+  Plug 'joshdick/onedark.vim'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
+colorscheme onedark
