@@ -12,6 +12,7 @@ while true; do
             exit;;
     esac
 done
+sudo apt install ripgrep
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 source ../neovim/.config/nvim/lua/studiumsetup/packer.lua
 echo "Run :PackerSync to install Plugins"
