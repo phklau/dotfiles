@@ -12,9 +12,10 @@ lsp.nvim_workspace()
 local cmp = require('cmp')
 local cmp_select = {behaviour = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
- ['<C-p'] = cmp.mapping.select_prev_item(cmp_select),
- ['<C-n'] = cmp.mapping.select_next_item(cmp_select),
- ['<TAB>'] = cmp.mapping.confirm({ select = true}),
+ ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+ ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
+ ['<Tab>'] = cmp.mapping.confirm({ select = true}),
+ ['<CR>'] = cmp.mapping.abort(),
  ['<C-Space>'] = cmp.mapping.complete()
 })
 
@@ -27,6 +28,7 @@ lsp.on_attach(function(client, bufnr)
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 end)
 
 lsp.setup()
