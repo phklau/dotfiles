@@ -5,7 +5,7 @@
 add_newline = false
 
 # A minimal left prompt
-format = """$all$directory$git_branch$git_status$cmd_duration$status$character"""
+format = """$all$directory$git_branch$git_state$git_status$cmd_duration$status$character"""
 
 # no right prompt
 right_format = ""
@@ -34,7 +34,7 @@ format = '[$branch]($style)'
 style = 'bold green'
 
 [git_status]
-format = "[($ahead_behind$stashed)]($style) "
+format = '([\[$all_status$ahead_behind\]]($style) )'
 style = "cyan"
 stashed = "≡"
 ahead = "⇡${count}"
