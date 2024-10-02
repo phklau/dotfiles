@@ -34,8 +34,8 @@ format = '[$branch]($style)'
 style = 'bold green'
 
 [git_status]
-format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "cyan"
+format = '( [$all_status](yellow) [\[$ahead_behind\]]($style) )'
+style = "green"
 stashed = "≡"
 ahead = "⇡${count}"
 behind = "⇣${count}"
